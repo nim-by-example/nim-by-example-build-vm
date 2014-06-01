@@ -1,0 +1,17 @@
+name: python-ruby
+version: 0.0.1
+inherits: wercker/default
+type: service
+platform: ubuntu@12.04
+description: wercker box with python 3 and ruby
+keywords:
+  - python
+  - ruby
+packages:
+  - python3@3.4.0
+  - ruby2.1@2.1.0
+script: |
+  sudo apt-get install python-software-properties -y
+  sudo apt-add-repository ppa:brightbox/ruby-ng -y
+  sudo apt-get update -y
+  sudo apt-get install ruby2.1 -y
