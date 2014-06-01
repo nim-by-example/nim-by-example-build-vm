@@ -15,6 +15,7 @@ script: |
   sudo apt-add-repository ppa:brightbox/ruby-ng -y
   sudo apt-get update -y
   sudo apt-get install ruby2.1 -y
-  sudo apt-get install python3-pip python3-dev build-essential -y
+  sudo apt-get install python3-setuptools python3-dev build-essential -y
+  sudo easy_install3 pip
   sudo pip install --upgrade pip 
   sudo pip install --upgrade virtualenv  
