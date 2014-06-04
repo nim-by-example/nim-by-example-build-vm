@@ -1,12 +1,14 @@
-name: python-ruby
+name: nimrod-by-example-build-vm
 version: 0.0.3
 inherits: wercker/default@0.0.2
 type: service
 platform: ubuntu@12.04
-description: wercker box with python 3 and ruby
+description: used to build nimrod-by-example in less than 5 miniutes
 keywords:
   - python
   - ruby
+  - nanoc
+  - pygments
 packages:
   - python3@3.4.0
   - ruby2.1@2.1.0
@@ -17,4 +19,6 @@ script: |
   sudo apt-get install ruby2.1 ruby2.1-dev python3-setuptools python3-dev build-essential -y
   sudo easy_install3 pip
   sudo pip install --upgrade pip 
-  sudo pip install --upgrade virtualenv  
+  sudo pip install --upgrade virtualenv
+  sudo gem install nanoc kramdown nokogiri
+  sudo pip install pygments
