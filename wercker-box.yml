@@ -1,5 +1,5 @@
 name: nim-by-example-build-vm
-version: 0.0.4
+version: 0.0.5
 inherits: wercker/default@0.0.2
 type: service
 platform: ubuntu@12.04
@@ -15,9 +15,5 @@ packages:
 script: |
   gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
   sudo apt-get update -y
-  sudo apt-get install python3-setuptools python3-dev build-essential -y
+  sudo apt-get install python-pygments build-essential -y
   curl -sSL https://get.rvm.io | bash -s stable --gems=nanoc,kramdown,nokogiri
-  sudo easy_install3 pip
-  sudo pip install --upgrade pip 
-  sudo pip install --upgrade virtualenv
-  sudo pip install pygments
