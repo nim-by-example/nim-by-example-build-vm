@@ -13,12 +13,11 @@ packages:
   - python3@3.4.0
   - ruby2.1@2.1.0
 script: |
-  sudo apt-get install python-software-properties -y
-  sudo apt-add-repository ppa:brightbox/ruby-ng -y
+  gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
   sudo apt-get update -y
-  sudo apt-get install ruby2.1 ruby2.1-dev python3-setuptools python3-dev build-essential -y
+  sudo apt-get install python3-setuptools python3-dev build-essential -y
+  curl -sSL https://get.rvm.io | bash -s stable --gems=nanoc,kramdown,nokogiri
   sudo easy_install3 pip
   sudo pip install --upgrade pip 
   sudo pip install --upgrade virtualenv
-  sudo gem install nanoc kramdown nokogiri
   sudo pip install pygments
