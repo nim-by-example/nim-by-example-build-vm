@@ -9,3 +9,8 @@ RUN pip install --upgrade pip && \
 
 RUN curl -sSL https://get.rvm.io | \
         bash -s stable --gems=nanoc,kramdown,nokogiri,rainpress,uglifier
+
+RUN locale-gen en_US.UTF-8  
+ENV LANG en_US.UTF-8  
+ENV LANGUAGE en_US:en  
+ENV LC_ALL en_US.UTF-8  
